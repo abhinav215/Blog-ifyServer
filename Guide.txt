@@ -1,0 +1,17 @@
+{
+    "username": "Abhi",
+    "email": "ab@3",
+    "password": "ab3"
+}
+
+
+{
+    "username": "Abhi",
+    "email": "ab@3",
+    "password": "$2b$10$R55VGO3Vgg6jUeIPO.aqmOM7SF6IKRakraMlwO.yOyfLmWK.DUZ.a",
+    "profilePic": "",
+    "_id": "6290375f2aa54944991a83f7",
+    "createdAt": "2022-05-27T02:28:47.180Z",
+    "updatedAt": "2022-05-27T02:28:47.180Z",
+    "__v": 0
+}
