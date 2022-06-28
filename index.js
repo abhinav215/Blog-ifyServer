@@ -63,7 +63,7 @@ app.use("/api/categories", categoryRoute);
 //   console.log("Backend is running at Port 5000");
 // });
 
-app.listen(process.env.PORT || 5000, () => {
+app.listen(process.env.PORT || 5000, process.env.YOUR_HOST || "0.0.0.0", () => {
   console.log("Backend is running at Port 5000");
 });
 
