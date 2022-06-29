@@ -14,12 +14,15 @@ app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
 
 mongoose
-  .connect("mongodb://localhost:27017/Blog", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    // useCreateIndex: true,
-    // useFindAndModify: true,
-  })
+  .connect(
+    "mongodb+srv://Abhinav:Abhi0606@cluster0.0tnfyce.mongodb.net/Blog?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      // useCreateIndex: true,
+      // useFindAndModify: true,
+    }
+  )
   .then(console.log("MongoDb connected"))
   .catch((err) => console.log(err));
 
