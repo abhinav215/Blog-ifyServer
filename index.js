@@ -11,9 +11,10 @@ const path = require("path");
 const cors = require("cors");
 
 app.use(
-  cors({
-    origin: "https://main--clinquant-cupcake-cf50c7.netlify.app/",
-  })
+  cors()
+  //   {
+  //   origin: "https://main--clinquant-cupcake-cf50c7.netlify.app/",
+  // }
 );
 dotenv.config();
 app.use(express.json());
