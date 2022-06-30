@@ -10,6 +10,15 @@ const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
 
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Header",
+    "Origin, X-Requested-With, Content-Type,Accept"
+  );
+  next();
+});
+
 app.use(
   cors()
   //   {
