@@ -19,6 +19,10 @@ app.use(function (req, res, next) {
   next();
 });
 
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS");
+header("Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token");
+
 app.use(
   cors()
   //   {
