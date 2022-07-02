@@ -19,15 +19,15 @@ const cors = require("cors");
 //   next();
 // });
 
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS");
-header("Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token");
+// header("Access-Control-Allow-Origin: *");
+// header("Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS");
+// header("Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token");
 
 app.use(
-  cors()
-  //   {
-  //   origin: "https://main--clinquant-cupcake-cf50c7.netlify.app/",
-  // }
+  cors({
+    origin: "https://main--clinquant-cupcake-cf50c7.netlify.app/",
+    preflightContinue: false,
+  })
 );
 dotenv.config();
 app.use(express.json());
@@ -78,9 +78,9 @@ app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/categories", categoryRoute);
 
-// app.use("/api/", (req, res, next) => {
-//   res.send("This is our starting page");
-// });
+app.use("/api/", (req, res, next) => {
+  res.send("This is our starting page");
+});
 
 // app.listen("5000", () => {
 //   console.log("Backend is running at Port 5000");
