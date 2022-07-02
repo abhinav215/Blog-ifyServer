@@ -23,12 +23,15 @@ const cors = require("cors");
 // header("Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS");
 // header("Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token");
 
-app.use(
-  cors({
-    origin: "https://main--clinquant-cupcake-cf50c7.netlify.app/",
-    preflightContinue: false,
-  })
-);
+const corsOpts = {
+  origin: "*",
+  credentials: true,
+  methods: ["GET", "POST", "HEAD", "PUT", "PATCH", "DELETE"],
+  allowedHeaders: ["Content-Type"],
+  exposedHeaders: ["Content-Type"],
+};
+app.use(cors(corsOpts));
+
 dotenv.config();
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
@@ -78,9 +81,9 @@ app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/categories", categoryRoute);
 
-app.use("/api/", (req, res, next) => {
-  res.send("This is our starting page");
-});
+// app.use("/api/", (req, res, next) => {
+//   res.send("This is our starting page");
+// });
 
 // app.listen("5000", () => {
 //   console.log("Backend is running at Port 5000");
